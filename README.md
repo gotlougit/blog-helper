@@ -21,20 +21,18 @@ Coming soon! Right now, just download the two files ```config.py``` and ```main.
 python3 main.py add-polish FILENAME
 ```
 
-> >
 If you are running this command for the first time, there will be a single line of output as such: 
-> > 
+
 ```config file not found! creating one with default values..```
-> >
-> >
+
 This creates a file called ```web_config.json`` in your website folder. Edit this file to specify the name of your:
 
-> > - head file
-> > - foot file
-> > - entry file
-> > - index file (this is the main webpage where each post will be added
-> > - the comment style for specifying that your file's head has ended, or your file's foot is beginning
-> > - and much more!
+ - head file
+ - foot file
+ - entry file
+ - index file (this is the main webpage where each post will be added
+ - the comment style for specifying that your file's head has ended, or your file's foot is beginning
+ - and much more!
 
 - Add entry to the main webpage
 
