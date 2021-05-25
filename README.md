@@ -23,9 +23,9 @@ python3 main.py add-polish FILENAME
 
 > >
 If you are running this command for the first time, there will be a single line of output as such: 
-> > ```
-config file not found! creating one with default values..
-> >```
+> > 
+```config file not found! creating one with default values..```
+> >
 > >
 This creates a file called ```web_config.json`` in your website folder. Edit this file to specify the name of your:
 
