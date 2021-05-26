@@ -21,7 +21,9 @@ default_data = {
     'rss_indexfile':'rss.xml',
     'rss_headfile':'rsshead.xml',
     'rss_entryfile':'rssentry.xml',
-    'rss_footfile':'rssfoot.xml'
+    'rss_footfile':'rssfoot.xml',
+    'rss':0,
+    'pagelink':'127.0.0.1'
 }
 
 def saveData(data):

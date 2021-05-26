@@ -14,7 +14,9 @@ foot_start = settings['foot_start']
 title_temp = settings['title_temp']
 link_temp = settings['link_temp']
 desc_temp = settings['desc_temp']
+pagelink = settings['pagelink']
 
+rss_enable = int(settings['rss'])
 rss_headfile = settings['rss_headfile']
 rss_footfile = settings['rss_footfile']
 rss_entryfile = settings['rss_entryfile']
@@ -44,7 +46,10 @@ def removePolish(content):
     return raw_content
 
 def polishFile(filename,rss=False):
-    f = readFile(filename)
+    if not rss:
+        f = readFile(filename)
+    else:
+        f = ''
     newfile_content = addPolish(f,rss=rss)
 
     with open(filename,'w') as nf: 
@@ -62,18 +67,19 @@ def addEntry(heading,rel_filename,desc,rss=False):
     if not rss: 
         entry = open(entry_path).read()
         ipath = index_path
-    else:
+    elif rss_enable:
         entry = open(rss_entry_path).read()
         ipath = rss_index_path
  
     new_entry = entry.replace(title_temp,heading)
+    if rss:
+        rel_filename = pagelink + '/' + rel_filename
     new_entry = new_entry.replace(link_temp,rel_filename)
     new_entry = new_entry.replace(desc_temp,desc)
 
     index_content = readFile(ipath)
     raw_index = removePolish(index_content)
     new_content = addPolish(new_entry + raw_index,rss=rss)
-    
     with open(ipath,'w') as nf:
         nf.write(new_content)
 
