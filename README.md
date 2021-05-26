@@ -1,5 +1,7 @@
 # blog-helper
-Small script to add templates and add blogpost entry to main webpage with easy customization settings.
+Small script to add templates and add blogpost entry to main webpage with easy customization settings. 
+
+It utilizes only the builtin modules and is a pretty small code base to understand for easy maintenance and extensibility. 
 
 ## Requirements
 In the website folder, ie, the place where your website is stored, you MUST have a ```templates/``` folder with the following three files:
@@ -45,3 +47,9 @@ python3 main.py add-entry FILENAME
 ```bash
 python3 main.py update-polish FILENAME
 ```
+
+## Upcoming Features
+
+- RSS feed maker: this goes almost hand in hand with a typical blog, so this is one feature that will be pretty important.
+
+- PyPI installation method: to encourage easy usage via the command line, which is what this project is all about
