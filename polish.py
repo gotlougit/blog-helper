@@ -27,9 +27,13 @@ def readFile(filename):
 def getTemplatePath(filename):
     return os.getcwd() + os.sep.join(('','templates',filename))
 
-def addPolish(content):
-    head = readFile(head_path)
-    foot = readFile(foot_path)
+def addPolish(content,rss=False):
+    if not rss:
+        head = readFile(head_path)
+        foot = readFile(foot_path)
+    else:
+        head = readFile(rss_head_path)
+        foot = readFile(rss_foot_path)
 
     new_content = head + content + foot
     return new_content
@@ -39,34 +43,38 @@ def removePolish(content):
     raw_content = content.partition(head_end)[-1].partition(foot_start)[0]
     return raw_content
 
-def polishFile(filename):
+def polishFile(filename,rss=False):
     f = readFile(filename)
-    newfile_content = addPolish(f)
+    newfile_content = addPolish(f,rss=rss)
 
     with open(filename,'w') as nf: 
         nf.write(newfile_content)
 
-def updatePolish(filename):
+def updatePolish(filename,rss=False):
     old_content = readFile(filename)
     raw_content = removePolish(old_content)
-    new_content = addPolish(raw_content)
+    new_content = addPolish(raw_content,rss=rss)
     
     with open(filename,'w') as nf: 
         nf.write(new_content)
 
-def addEntry(heading,rel_filename,desc):
-   
-    entry = open(entry_path).read()
-
+def addEntry(heading,rel_filename,desc,rss=False):
+    if not rss: 
+        entry = open(entry_path).read()
+        ipath = index_path
+    else:
+        entry = open(rss_entry_path).read()
+        ipath = rss_index_path
+ 
     new_entry = entry.replace(title_temp,heading)
     new_entry = new_entry.replace(link_temp,rel_filename)
     new_entry = new_entry.replace(desc_temp,desc)
 
-    index_content = readFile(index_path)
+    index_content = readFile(ipath)
     raw_index = removePolish(index_content)
-    new_content = addPolish(new_entry + raw_index)
+    new_content = addPolish(new_entry + raw_index,rss=rss)
     
-    with open(index_path,'w') as nf:
+    with open(ipath,'w') as nf:
         nf.write(new_content)
 
 head_path = getTemplatePath(headfile)
