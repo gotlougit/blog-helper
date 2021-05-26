@@ -8,11 +8,17 @@ headfile = settings['headfile']
 footfile = settings['footfile']
 entryfile = settings['entryfile']
 indexfile = settings['indexfile']
+
 head_end = settings['head_end']
 foot_start = settings['foot_start']
 title_temp = settings['title_temp']
 link_temp = settings['link_temp']
 desc_temp = settings['desc_temp']
+
+rss_headfile = settings['rss_headfile']
+rss_footfile = settings['rss_footfile']
+rss_entryfile = settings['rss_entryfile']
+rss_indexfile = settings['rss_indexfile']
 
 def readFile(filename):
     with open(filename) as f:
@@ -66,4 +72,9 @@ def addEntry(heading,rel_filename,desc):
 head_path = getTemplatePath(headfile)
 foot_path = getTemplatePath(footfile)
 entry_path= getTemplatePath(entryfile)
-index_path = getTemplatePath(indexfile)
+index_path = os.getcwd() + os.sep.join(('',indexfile))
+
+rss_head_path = getTemplatePath(rss_headfile)
+rss_foot_path = getTemplatePath(rss_footfile)
+rss_entry_path= getTemplatePath(rss_entryfile)
+rss_index_path = os.getcwd() + os.sep.join(('',rss_indexfile))

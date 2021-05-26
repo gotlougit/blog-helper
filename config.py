@@ -18,7 +18,7 @@ default_data = {
     'title_temp':'this is a title',
     'link_temp':'this is a link',
     'desc_temp':'this is a desc',
-    'rss':'0',
+    'rss_indexfile':'rss.xml',
     'rss_headfile':'rsshead.xml',
     'rss_entryfile':'rssentry.xml',
     'rss_footfile':'rssfoot.xml'

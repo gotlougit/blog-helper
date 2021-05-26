@@ -26,6 +26,10 @@ if __name__ == '__main__':
         except IndexError:
             print('ERROR! No filename given!')
 
+    elif args[0] == 'init': #this is just to create the config file
+        print('Make sure to have a templates/ folder here before starting!')
+        pass
+
 else:
     print('ERROR: not able to find script path! Please directly execute!')
     quit()
