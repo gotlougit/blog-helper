@@ -1,8 +1,25 @@
 #module full of relevant functions for polishing webpages
+import os
+import config
+
+settings = config.loadData()
+    
+headfile = settings['headfile']
+footfile = settings['footfile']
+entryfile = settings['entryfile']
+indexfile = settings['indexfile']
+head_end = settings['head_end']
+foot_start = settings['foot_start']
+title_temp = settings['title_temp']
+link_temp = settings['link_temp']
+desc_temp = settings['desc_temp']
 
 def readFile(filename):
     with open(filename) as f:
         return f.read()
+
+def getTemplatePath(filename):
+    return os.getcwd() + os.sep.join(('','templates',filename))
 
 def addPolish(content):
     head = readFile(head_path)
@@ -46,3 +63,7 @@ def addEntry(heading,rel_filename,desc):
     with open(index_path,'w') as nf:
         nf.write(new_content)
 
+head_path = getTemplatePath(headfile)
+foot_path = getTemplatePath(footfile)
+entry_path= getTemplatePath(entryfile)
+index_path = getTemplatePath(indexfile)

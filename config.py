@@ -16,11 +16,13 @@ default_data = {
     'head_end':'<!-- HEAD END -->',
     'foot_start':'<!-- FOOT START -->',
     'title_temp':'this is a title',
-    'link_temp':'link',
-    'desc_temp':'this is desc',
-    'rss':'0'
+    'link_temp':'this is a link',
+    'desc_temp':'this is a desc',
+    'rss':'0',
+    'rss_headfile':'rsshead.xml',
+    'rss_entryfile':'rssentry.xml',
+    'rss_footfile':'rssfoot.xml'
 }
-
 
 def saveData(data):
 
