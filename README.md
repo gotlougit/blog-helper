@@ -15,7 +15,7 @@ If you want an rss feed as well, the following 3 files will also be needed in th
 - rssfoot.xml: corresponds to foot.html for rss feed
 - rssentry.xml: corresponds to entry.html for rss feed
 
-Note: the names of these files can be customized in your ```web_config.json``` file ;if you run the program once it will automatically be created.
+Note: the names of these files can be customized in your ```web_config.json``` file; if you run the program once it will automatically be created.
 
 ## Installation
 
