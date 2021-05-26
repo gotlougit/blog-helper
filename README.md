@@ -1,5 +1,5 @@
 # blog-helper
-Small script to add templates and add blogpost entry to main webpage with easy customization settings. 
+Small program to add templates and add blogpost entry to main webpage with easy customization settings. 
 
 It utilizes only the builtin modules and is a pretty small code base to understand for easy maintenance and extensibility. 
 
@@ -45,6 +45,16 @@ These are pretty self-explanatory, but a more detailed explanation of each varia
 
 Note: some of these options are intended for future features, so don't mess around with those until the feature has been added.
 
+After this, go ahead and edit certain parameters to your liking, like if you want rss enabled
+
+- Add rss feed (make sure to set rss to 1 in json file and pagelink to your website in ```web_config.json``` file)
+
+```bash
+python3 main.py add-rss
+```
+
+You HAVE to run this command, as this creates the ```rss.xml``` file (as per default settings) where your rss feed resides.
+
 - Add templates to given webpage FILENAME (this is known as polish)
 
 ```bash
@@ -63,14 +73,14 @@ python3 main.py add-entry FILENAME
 python3 main.py update-polish FILENAME
 ```
 
-- Add rss feed (make sure to write rss to 1 in json file and set pagelink to your website)
-
-```bash
-python3 main.py add-rss
-```
-
 ## Upcoming Features
 
 - PyPI installation method: to encourage easy usage via the command line, which is what this project is all about
 
 - Sample templates so that it can be cleared up how to write these; these will be uploaded soon to this repo
+
+- Automatic timestamp generation so that you can focus on the content and not the time
+
+- RSS feed customization, such as adding images, author's email and other info
+
+- Some exceptions for your ```index.html``` so that you can have something special on that page (eg. small overview, intro, special links etc.)
