@@ -17,17 +17,14 @@ Coming soon! Right now, just download the two files ```config.py``` and ```main.
 
 ## Usage
 
-- Add templates to given webpage FILENAME (this is known as polish)
+- First initialize the program
 
 ```bash
-python3 main.py add-polish FILENAME
+python3 main.py init
 ```
 
-If you are running this command for the first time, there will be a single line of output as such: 
-
-```config file not found! creating one with default values..```
-
-This creates a file called ```web_config.json`` in your website folder. Edit this file to specify the name of your:
+This creates the ```web_config.json``` file that has lots of configuration options. 
+Edit this file to specify the name of your:
 
      * head file
      * foot file
@@ -35,6 +32,14 @@ This creates a file called ```web_config.json`` in your website folder. Edit thi
      * index file (this is the main webpage where each post will be added
      * the comment style for specifying that your file's head has ended, or your file's foot is beginning
      * and much more!
+     
+Note: some of these options are intended for future features, so don't mess around with those until the feature has been added.
+
+- Add templates to given webpage FILENAME (this is known as polish)
+
+```bash
+python3 main.py add-polish FILENAME
+```
 
 - Add entry to the main webpage
 
