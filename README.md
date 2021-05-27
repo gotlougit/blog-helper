@@ -35,10 +35,12 @@ Edit this file to specify the name of your:
      * head file
      * foot file
      * entry file
-     * index file (this is the main webpage where each post will be added
+     * index file (this is the main webpage where each post will be added)
      * the comment style for specifying that your file's head has ended, or your file's foot is beginning
      * enabling rss feed
      * main page link for your website
+     * date and timestamp with custom formatting
+     * custom placeholders for content
      * and much more!
      
 These are pretty self-explanatory, but a more detailed explanation of each variable found in the file will be written at a later date.
@@ -78,8 +80,6 @@ python3 main.py update-polish FILENAME
 - PyPI installation method: to encourage easy usage via the command line, which is what this project is all about
 
 - Sample templates so that it can be cleared up how to write these; these will be uploaded soon to this repo
-
-- Automatic timestamp generation so that you can focus on the content and not the time
 
 - RSS feed customization, such as adding images, author's email and other info
 
