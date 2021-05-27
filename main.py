@@ -18,7 +18,7 @@ if __name__ == '__main__':
             title = input('Title: ')
             desc = input('Description: ')  
             polish.addEntry(title,args[1],desc)
-            if polish.rss_enable:
+            if polish.rss:
                 polish.addEntry(title,args[1],desc,rss=True)
         except IndexError:
             print('ERROR! One or more arguments missing!') 
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     elif args[0] == 'init':
         print('Make sure to have a templates/ folder here before starting!')
         print('Also make sure to configure web_config.json for your purposes!')
-        if polish.rss_enable:
+        if polish.rss:
             polish.polishFile(polish.rss_index_path, rss=True)
 
     elif args[0] == 'add-rss': #just in case someone messes up

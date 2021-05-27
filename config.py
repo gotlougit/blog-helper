@@ -23,7 +23,13 @@ default_data = {
     'rss_entryfile':'rssentry.xml',
     'rss_footfile':'rssfoot.xml',
     'rss':0,
-    'pagelink':'127.0.0.1'
+    'pagelink':'127.0.0.1',
+    'datestamp':0,
+    'timestamp':0,
+    'date_temp':'this is date',
+    'time_temp':'this is time',
+    'date_str':'%A, %d %B, %Y',
+    'time_str':'%I:%M %p'
 }
 
 def saveData(data):
