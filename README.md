@@ -46,6 +46,7 @@ Edit this file to specify the name of your:
 These are pretty self-explanatory, but a more detailed explanation of each variable found in the file will be written at a later date.
 
 Note: some of these options are intended for future features, so don't mess around with those until the feature has been added.
+
 Check [this link](https://www.tutorialspoint.com/python/time_strftime.htm)  for details on custom layouts (look for Directive) 
 
 After this, go ahead and edit certain parameters to your liking, like if you want rss enabled
