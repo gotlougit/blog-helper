@@ -30,10 +30,10 @@ if __name__ == '__main__':
             print('ERROR! No filename given!')
 
     elif args[0] == 'init':
-        print('Make sure to have a templates/ folder here before starting!')
-        print('Also make sure to configure web_config.json for your purposes!')
-        if polish.rss:
-            polish.polishFile(polish.rss_index_path, rss=True)
+        try:
+            os.chdir('templates/')
+        except FileNotFoundError:
+            print('WARNING: templates/ folder not found!') 
 
     elif args[0] == 'add-rss': #just in case someone messes up
         polish.polishFile(polish.rss_index_path, rss=True)

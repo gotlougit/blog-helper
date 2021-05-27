@@ -4,7 +4,7 @@ import config
 import time
 
 settings = config.loadData()
-    
+ 
 headfile = settings['headfile']
 footfile = settings['footfile']
 entryfile = settings['entryfile']
@@ -93,14 +93,14 @@ def updatePolish(filename,rss=False):
 def addEntry(heading,rel_filename,desc,rss=False):
     
     if not rss: 
-        entry = open(entry_path).read()
+        new_entry = open(entry_path).read()
         ipath = index_path
     else:
-        entry = open(rss_entry_path).read()
+        new_entry = open(rss_entry_path).read()
         ipath = rss_index_path
         rel_filename = pagelink + '/' + rel_filename
      
-    new_entry = entry.replace(title_temp,heading)
+    new_entry = new_entry.replace(title_temp,heading)
     new_entry = new_entry.replace(link_temp,rel_filename)
     new_entry = new_entry.replace(desc_temp,desc)
     new_entry = addDateTime(new_entry)
