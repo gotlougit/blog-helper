@@ -19,14 +19,30 @@ Note: the names of these files can be customized in your ```web_config.json``` f
 
 ## Installation
 
-Coming soon! Right now, just download the two files ```config.py``` and ```main.py``` and place them in the website folder
+Clone this repository with
+
+```bash
+git clone https://github.com/gotlougit/blog-helper.git
+```
+
+Then go into the ```blog-helper``` folder
+
+```bash
+cd blog-helper
+```
+
+Run the following command (using pip is better since in case of installation the procedure is easier):
+
+```bash
+pip install .
+```
 
 ## Usage
 
 - First initialize the program
 
 ```bash
-python3 main.py init
+python3 blog-helper init
 ```
 
 This creates the ```web_config.json``` file that has lots of configuration options. 
@@ -54,7 +70,7 @@ After this, go ahead and edit certain parameters to your liking, like if you wan
 - Add rss feed (make sure to set rss to 1 in json file and pagelink to your website in ```web_config.json``` file)
 
 ```bash
-python3 main.py add-rss
+python3 blog-helper add-rss
 ```
 
 You HAVE to run this command, as this creates the ```rss.xml``` file (as per default settings) where your rss feed resides.
@@ -62,19 +78,19 @@ You HAVE to run this command, as this creates the ```rss.xml``` file (as per def
 - Add templates to given webpage FILENAME (this is known as polish)
 
 ```bash
-python3 main.py add-polish FILENAME
+python3 blog-helper add-polish FILENAME
 ```
 
 - Add entry to the main webpage (if rss has already been enabled it will add an entry to the rss feed as well)
 
 ```bash
-python3 main.py add-entry FILENAME
+python3 blog-helper add-entry FILENAME
 ```
 
 - Update polish for a webpage
 
 ```bash
-python3 main.py update-polish FILENAME
+python3 blog-helper update-polish FILENAME
 ```
 
 ## Upcoming Features
