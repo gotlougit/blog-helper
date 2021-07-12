@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: blog-helper
+Version: 1.0
+Summary: Small blog maintenance helper
+Home-page: https://github.com/gotlougit/blog-helper
+Author: Saksham Mittal
+Author-email: gotlouemail@tutanota.com
+License: UNKNOWN
+Description: Small program to add templates and add blogpost entry to main webpage with easy customization settings.
+Platform: UNKNOWN

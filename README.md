@@ -101,4 +101,8 @@ python3 blog-helper update-polish FILENAME
 
 - RSS feed customization, such as adding images, author's email and other info
 
+- Page Licensing info at the bottom
+
 - Some exceptions for your ```index.html``` so that you can have something special on that page (eg. small overview, intro, special links etc.)
+
+- Pages of ```index.html``` so that it doesn't just load an extremely long page of blog posts ;)
