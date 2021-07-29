@@ -85,12 +85,12 @@ python3 -m blog-helper update-polish FILENAME
 
 ## Upcoming Features
 
+- Adding a "last updated" feature
+
 - PyPI installation method: to encourage easy usage via the command line, which is what this project is all about
 
 - Sample templates so that it can be cleared up how to write these; these will be uploaded soon to this repo
 
 - RSS feed customization, such as adding images, author's email and other info
-
-- Some exceptions for your ```index.html``` so that you can have something special on that page (eg. small overview, intro, special links etc.)
 
 - Pages of ```index.html``` so that it doesn't just load an extremely long page of blog posts ;)
