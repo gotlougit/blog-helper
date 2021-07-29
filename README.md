@@ -65,7 +65,9 @@ python3 -m blog-helper add-rss
 
 You HAVE to run this command, as this creates the ```rss.xml``` file (as per default settings) where your rss feed resides.
 
-- Add templates to given webpage FILENAME (this is known as polish)
+- Add templates to given webpage FILENAME (this is known as polish).
+
+This will also modify your ```<title>``` tag value if you write title placeholder in the ```head.html``` template. So for example, ```<title>this is a title</title>``` will become ```<title>Hello world!</title>``` if your content starts with ```<h1 id='...'>Hello world!</title>```
 
 ```bash
 python3 -m blog-helper add-polish FILENAME
