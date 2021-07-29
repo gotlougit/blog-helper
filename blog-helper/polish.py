@@ -42,6 +42,16 @@ def getTemplatePath(filename):
 
     return os.getcwd() + os.sep.join(('','templates',filename))
 
+def getTitle(content):
+    
+    lines = content.split('\n')
+    for i in lines:
+        if "<h1 id=" in i:
+            titleWithTag = i
+            break
+    title = titleWithTag.partition('>')[2].partition('<')[0]
+    return title
+
 def addDateTime(content):
     
     if datestamp:
@@ -65,9 +75,11 @@ def addPolish(content,rss=False,findex=False):
     else:
         head = readFile(head_path)
         foot = readFile(foot_path)
-
-    content = addDateTime(content) 
-
+    
+    content = addDateTime(content)
+    title = getTitle(content)
+    print(title)
+    head = head.replace(title_temp, title)
     new_content = head + content + foot
     return new_content
 
