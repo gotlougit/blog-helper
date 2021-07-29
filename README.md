@@ -83,6 +83,12 @@ python3 -m blog-helper add-entry FILENAME
 python3 -m blog-helper update-polish FILENAME
 ```
 
+- Update polish for index.html
+
+```bash
+python3 -m blog-helper update-index FILENAME
+```
+
 ## Upcoming Features
 
 - Adding a "last updated" feature
