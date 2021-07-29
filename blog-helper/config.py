@@ -2,10 +2,6 @@
 
 import os, json
 
-#set both variables before using code!
-#fname = '' 
-#default_data = {} 
-
 #set up variables here instead for easy access
 fname = os.getcwd() + os.sep.join(('','web_config.json'))
 default_data = { 
@@ -13,11 +9,13 @@ default_data = {
     'footfile':'foot.html',
     'entryfile':'entry.html',
     'indexfile':'index.html',
+    'indexhead':'indexhead.html',
+    'indexfoot':'indexfoot.html',
     'head_end':'<!-- HEAD END -->',
     'foot_start':'<!-- FOOT START -->',
     'title_temp':'this is a title',
-    'link_temp':'this is a link',
-    'desc_temp':'this is a desc',
+    'link_temp':'this-is-a-link',
+    'desc_temp':'this is desc',
     'rss_indexfile':'rss.xml',
     'rss_headfile':'rsshead.xml',
     'rss_entryfile':'rssentry.xml',

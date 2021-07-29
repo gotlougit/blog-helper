@@ -10,6 +10,9 @@ footfile = settings['footfile']
 entryfile = settings['entryfile']
 indexfile = settings['indexfile']
 
+indexhead = settings['indexhead']
+indexfoot = settings['indexfoot']
+
 head_end = settings['head_end']
 foot_start = settings['foot_start']
 title_temp = settings['title_temp']
@@ -51,15 +54,18 @@ def addDateTime(content):
    
     return content
  
-def addPolish(content,rss=False):
+def addPolish(content,rss=False,findex=False):
 
-    if not rss:
-        head = readFile(head_path)
-        foot = readFile(foot_path)
-    else:
+    if rss:
         head = readFile(rss_head_path)
         foot = readFile(rss_foot_path)
-    
+    elif findex:
+        head = readFile(indexhead_path)
+        foot = readFile(indexfoot_path)
+    else:
+        head = readFile(head_path)
+        foot = readFile(foot_path)
+
     content = addDateTime(content) 
 
     new_content = head + content + foot
@@ -70,22 +76,22 @@ def removePolish(content):
     raw_content = content.partition(head_end)[-1].partition(foot_start)[0]
     return raw_content
 
-def polishFile(filename,rss=False):
+def polishFile(filename,rss=False,findex=False):
     
     if not rss:
         f = readFile(filename)
     else:
         f = ''
-    newfile_content = addPolish(f,rss=rss)
+    newfile_content = addPolish(f,rss=rss,findex=findex)
 
     with open(filename,'w') as nf: 
         nf.write(newfile_content)
 
-def updatePolish(filename,rss=False):
+def updatePolish(filename,rss=False,findex=False):
     
     old_content = readFile(filename)
     raw_content = removePolish(old_content)
-    new_content = addPolish(raw_content,rss=rss)
+    new_content = addPolish(raw_content,rss=rss,findex=findex)
     
     with open(filename,'w') as nf: 
         nf.write(new_content)
@@ -115,7 +121,11 @@ def addEntry(heading,rel_filename,desc,rss=False):
 head_path = getTemplatePath(headfile)
 foot_path = getTemplatePath(footfile)
 entry_path= getTemplatePath(entryfile)
+
 index_path = os.getcwd() + os.sep.join(('',indexfile))
+
+indexhead_path = getTemplatePath(indexhead)
+indexfoot_path = getTemplatePath(indexfoot)
 
 rss_head_path = getTemplatePath(rss_headfile)
 rss_foot_path = getTemplatePath(rss_footfile)
