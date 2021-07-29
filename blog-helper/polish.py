@@ -78,8 +78,8 @@ def addPolish(content,rss=False,findex=False):
     
     content = addDateTime(content)
     title = getTitle(content)
-    print(title)
     head = head.replace(title_temp, title)
+    head = addDateTime(head)
     new_content = head + content + foot
     return new_content
 
