@@ -99,10 +99,10 @@ def updatePolish(filename,rss=False,findex=False):
 def addEntry(heading,rel_filename,desc,rss=False):
     
     if not rss: 
-        new_entry = open(entry_path).read()
+        new_entry = readFile(entry_path)
         ipath = index_path
     else:
-        new_entry = open(rss_entry_path).read()
+        new_entry = readFile(rss_entry_path)
         ipath = rss_index_path
         rel_filename = pagelink + '/' + rel_filename
      

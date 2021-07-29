@@ -17,6 +17,12 @@ elif args[0] == 'add-index':
     except IndexError:
         print('ERROR! No filename given!')
 
+elif args[0] == 'update-index':
+    try:
+        polish.updatePolish(args[1],rss=False,findex=True)
+    except IndexError:
+        print('ERROR! No filename given!')
+
 elif args[0] == 'add-entry':
     try:  
         title = input('Title: ')
