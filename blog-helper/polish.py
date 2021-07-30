@@ -49,6 +49,8 @@ def getTitle(content):
         if "<h1 id=" in i:
             titleWithTag = i
             break
+    else:
+        return ''
     title = titleWithTag.partition('>')[2].partition('<')[0]
     return title
 
