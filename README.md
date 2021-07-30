@@ -85,6 +85,12 @@ python3 -m blog-helper add-entry FILENAME
 python3 -m blog-helper update-polish FILENAME
 ```
 
+- Remove polish from a webpage (this will print the raw webpage to ```stdin```, so make sure to redirect it to a file)
+
+```bash
+python3 -m blog-helper remove-polish FILENAME
+```
+
 - Update polish for index.html
 
 ```bash
