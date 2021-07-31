@@ -127,7 +127,7 @@ def addEntry(heading,rel_filename,desc,rss=False):
 
     index_content = readFile(ipath)
     raw_index = removePolish(index_content)
-    new_content = addPolish(new_entry + raw_index,rss=rss)
+    new_content = addPolish(new_entry + raw_index,rss=rss,findex=True)
 
     with open(ipath,'w') as nf:
         nf.write(new_content)
