@@ -28,6 +28,10 @@ rss_indexfile = settings['rss_indexfile']
 
 datestamp = int(settings['datestamp'])
 timestamp = int(settings['timestamp'])
+
+entry_add_temp = settings['entry_add_temp']
+entry_update_temp = settings['entry_update_temp']
+update_flag = settings['updateflag']
 date_temp = settings['date_temp']
 time_temp = settings['time_temp']
 date_str = settings['date_str']
@@ -46,7 +50,7 @@ def getTitle(content):
     
     lines = content.split('\n')
     for i in lines:
-        if "<h1 id=" in i:
+        if "<h1" in i:
             titleWithTag = i
             break
     else:
@@ -110,7 +114,7 @@ def updatePolish(filename,rss=False,findex=False):
     with open(filename,'w') as nf: 
         nf.write(new_content)
 
-def addEntry(heading,rel_filename,desc,rss=False):
+def addEntry(rel_filename,desc,rss=False):
     
     if not rss: 
         new_entry = readFile(entry_path)
@@ -119,7 +123,8 @@ def addEntry(heading,rel_filename,desc,rss=False):
         new_entry = readFile(rss_entry_path)
         ipath = rss_index_path
         rel_filename = pagelink + '/' + rel_filename
-     
+    
+    heading = getTitle(removePolish(readFile(rel_filename)))
     new_entry = new_entry.replace(title_temp,heading)
     new_entry = new_entry.replace(link_temp,rel_filename)
     new_entry = new_entry.replace(desc_temp,desc)

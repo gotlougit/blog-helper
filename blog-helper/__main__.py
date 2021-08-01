@@ -32,9 +32,9 @@ elif args[0] == 'update-index':
 
 elif args[0] == 'add-entry':
     try:  
-        title = input('Title: ')
+        #title = input('Title: ')
         desc = input('Description: ')  
-        polish.addEntry(title,args[1],desc)
+        polish.addEntry(args[1],desc)
         if polish.rss:
             polish.addEntry(title,args[1],desc,rss=True)
     except IndexError:
