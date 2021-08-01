@@ -1,7 +1,7 @@
 # blog-helper
 Small program to add templates and add blogpost entry to main webpage with easy customization settings. 
 
-It utilizes only the builtin modules and is a pretty small code base to understand for easy maintenance and extensibility. 
+It utilizes the builtin modules, [and a config-manager script](https://github.com/gotlougit/config-manager) and is a pretty small code base to understand for easy maintenance and extensibility. 
 
 ## Requirements
 In the website folder, ie, the place where your website is stored, you MUST have a ```templates/``` folder with the following three files:
