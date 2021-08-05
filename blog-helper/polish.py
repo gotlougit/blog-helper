@@ -58,11 +58,27 @@ def getTitle(content):
     title = titleWithTag.partition('>')[2].partition('<')[0]
     return title
 
-def addDateTime(content):
+def addDateTime(content,new=True):
     
     if datestamp:
         date_out = time.strftime(date_str,time.localtime())
-        content = content.replace(date_temp, date_out)
+        if entry_add_temp not in content: 
+            content = content.replace(date_temp, entry_add_temp + date_out + '| ' + entry_update_temp + '-')
+        else:
+            content = content.replace(date_temp,"")
+            lines = content.split('\n')
+            n = len(lines)
+            for i in range(n):
+                if entry_add_temp in lines[i]:
+                    break
+
+            x = list(lines[i].partition(entry_update_temp))
+            x[-1] = date_out
+            lines[i] = x[0] + x[1] + x[2]
+            newcontent = ''
+            for j in lines:
+                newcontent += j + '\n'
+            content = newcontent
 
     if timestamp:
         time_out = time.strftime(time_str,time.localtime()) 
@@ -70,7 +86,7 @@ def addDateTime(content):
    
     return content
  
-def addPolish(content,rss=False,findex=False):
+def addPolish(content,rss=False,findex=False,new=True):
 
     if rss:
         head = readFile(rss_head_path)
@@ -85,8 +101,9 @@ def addPolish(content,rss=False,findex=False):
     content = addDateTime(content)
     title = getTitle(content)
     head = head.replace(title_temp, title)
-    head = addDateTime(head)
+    #head = addDateTime(head,new=new)
     new_content = head + content + foot
+    new_content = addDateTime(new_content,new=new)
     return new_content
 
 def removePolish(content):
@@ -109,7 +126,7 @@ def updatePolish(filename,rss=False,findex=False):
     
     old_content = readFile(filename)
     raw_content = removePolish(old_content)
-    new_content = addPolish(raw_content,rss=rss,findex=findex)
+    new_content = addPolish(raw_content,rss=rss,findex=findex,new=False)
     
     with open(filename,'w') as nf: 
         nf.write(new_content)
