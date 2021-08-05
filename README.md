@@ -99,8 +99,6 @@ python3 -m blog-helper update-index FILENAME
 
 ## Upcoming Features
 
-- Adding a "last updated" feature
-
 - PyPI installation method: to encourage easy usage via the command line, which is what this project is all about
 
 - Sample templates so that it can be cleared up how to write these; these will be uploaded soon to this repo
