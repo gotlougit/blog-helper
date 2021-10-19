@@ -63,7 +63,7 @@ def addDateTime(content,new=True):
     if datestamp:
         date_out = time.strftime(date_str,time.localtime())
         if entry_add_temp not in content: 
-            content = content.replace(date_temp, entry_add_temp + date_out + '| ' + entry_update_temp + '-')
+            content = content.replace(date_temp, entry_add_temp + date_out + ' | ' + entry_update_temp + '-')
         else:
             content = content.replace(date_temp,"")
             lines = content.split('\n')
