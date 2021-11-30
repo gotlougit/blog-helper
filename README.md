@@ -32,7 +32,7 @@ And finally, ```pip install .```
 - First initialize the program
 
 ```bash
-python3 -m blog-helper init
+blog-helper init
 ```
 
 This creates the ```web_config.json``` file that has lots of configuration options. 
@@ -60,7 +60,7 @@ After this, go ahead and edit certain parameters to your liking, like if you wan
 - Add rss feed (make sure to set rss to 1 in json file and pagelink to your website in ```web_config.json``` file)
 
 ```bash
-python3 -m blog-helper add-rss
+blog-helper add-rss
 ```
 
 You HAVE to run this command, as this creates the ```rss.xml``` file (as per default settings) where your rss feed resides.
@@ -70,31 +70,31 @@ You HAVE to run this command, as this creates the ```rss.xml``` file (as per def
 This will also modify your ```<title>``` tag value if you write title placeholder in the ```head.html``` template. So for example, ```<title>this is a title</title>``` will become ```<title>Hello world!</title>``` if your content starts with ```<h1 id='...'>Hello world!</title>```
 
 ```bash
-python3 -m blog-helper add-polish FILENAME
+blog-helper add-polish FILENAME
 ```
 
 - Add entry to the main webpage (if rss has already been enabled it will add an entry to the rss feed as well)
 
 ```bash
-python3 -m blog-helper add-entry FILENAME
+blog-helper add-entry FILENAME
 ```
 
 - Update polish for a webpage
 
 ```bash
-python3 -m blog-helper update-polish FILENAME
+blog-helper update-polish FILENAME
 ```
 
 - Remove polish from a webpage (this will print the raw webpage to ```stdin```, so make sure to redirect it to a file)
 
 ```bash
-python3 -m blog-helper remove-polish FILENAME
+blog-helper remove-polish FILENAME
 ```
 
 - Update polish for index.html
 
 ```bash
-python3 -m blog-helper update-index FILENAME
+blog-helper update-index FILENAME
 ```
 
 ## Upcoming Features
@@ -106,3 +106,5 @@ python3 -m blog-helper update-index FILENAME
 - RSS feed customization, such as adding images, author's email and other info
 
 - Pages of ```index.html``` so that it doesn't just load an extremely long page of blog posts ;)
+
+- [Argument parsing support](https://docs.python.org/3/howto/argparse.html)
