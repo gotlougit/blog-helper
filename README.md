@@ -21,7 +21,7 @@ Note: the names of these files can be customized in your ```web_config.json``` f
 
 First clone this repository by typing
 
-```git clone https://github.com/gotlougit/blog-helper.git``` in the terminal.
+```git clone https://git.sr.ht/~gotlou/blog-helper.git``` in the terminal.
 
 Then, ```cd blog-helper```
 
