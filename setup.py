@@ -6,7 +6,7 @@ setup(name='blog-helper',
       long_description='Small program to add templates and add blogpost entry to main webpage with easy customization settings.',
       author='Saksham Mittal',
       author_email='hi@gotlou.com',
-      url='https://github.com/gotlougit/blog-helper',
+      url='https://git.sr.ht/~gotlou/blog-helper',
       scripts=['src/main.py', 'src/config.py', 'src/polish.py'],
       entry_points = {
         'console_scripts': [
