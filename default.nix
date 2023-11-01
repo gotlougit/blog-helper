@@ -5,12 +5,7 @@ buildPythonPackage rec {
   pname = "blog-helper";
   version = "1.1";
 
-  src = fetchFromSourcehut {
-    owner = "~gotlou";
-    repo = pname;
-    rev = "c49d8a057af35a82043c064f4bfb0370b929d130";
-    sha256 = "sha256-1Mq9W+rpcwHZu8QlsUptFWyUdrUCc4wPztuCtOfeCa0=";
-  };
+  src = ./.;
 
   doCheck = false;
   postInstall = ''
