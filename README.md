@@ -19,13 +19,37 @@ Note: the names of these files can be customized in your ```web_config.json``` f
 
 ## Installation
 
-First clone this repository by typing
+It's best to use Nix to install blog-helper into your system/project flake.
 
-```git clone https://git.sr.ht/~gotlou/blog-helper.git``` in the terminal.
+An example flake is given to add blog-helper into a dev shell:
 
-Then, ```cd blog-helper```
+```
+{
+  inputs.blog-helper.url = "sourcehut:~gotlou/blog-helper";
+  inputs.blog-helper.inputs.nixpkgs.follows = "nixpkgs";
 
-And finally, ```pip install .```
+  outputs = { self, nixpkgs, blog-helper }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShells.${system}.default = pkgs.mkShell {
+        name = "blog-shell";
+        buildInputs = [
+          blog-helper.packages.x86_64-linux.default
+        ];
+      };
+    };
+}
+```
+You can also use pip to install it if Nix is not an option for you:
+
+```
+git clone https://git.sr.ht/~gotlou/blog-helper
+cd blog-helper
+pip install .     
+```
 
 ## Usage
 
